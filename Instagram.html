@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Instagram</title>
+    <link rel="icon" type="image/x-icon" href="/Pic/instagram-logo.png">
+    <style>
+      /* Style untuk sidebar */
+      .sidebar {
+        height: 100%;
+        width: 200px; 
+        position: fixed;
+        left: 0;
+        top: 45px;
+        background-color: #ffffff;
+        overflow-x: hidden;
+        padding-top: 20px;
+        z-index: -1;
+      }
+
+      /* Style untuk link dalam sidebar */
+      .sidebar a {
+        padding-top: 20px;
+        padding-bottom: 15px;
+        padding-left: 18px;
+        text-decoration: none;
+        font-size: 18px;
+        font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+        color: #818181;
+        display: flex;
+      }
+
+      /* Style untuk link yang aktif (current) */
+      .sidebar a.active {
+        background-color: #555;
+        color: white;
+      }
+
+      /* Style untuk link ketika dihover */
+      .sidebar a:hover:not(.active) {
+        background-color: #555;
+        color: white;
+      }
+
+      .sidefoot{
+        padding-top: 50px;
+      }
+
+      .sidehead{
+        padding-top: 10px;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Sidebar -->
+    <div type="container" class="sidehead">
+      <header>
+        <a href="Instagram.html" id="logosidebar">
+          <img src="/Pic/Instagram_teks.svg">
+        </a>
+      </header>
+    </div>
+
+    <div class="sidebar">
+      <a href="Instagram.html" class="active">
+        <img src="/Pic/Instagram_logo.svg" alt="" class="icon">Home
+      </a>
+      <a href="#">Search</a>
+      <a href="#">Explore</a>
+      <a href="#">Reels</a>
+      <a href="#">Messages</a>
+      <a href="#">Notification</a>
+      <a href="#">Create</a>
+      <a href="#">Profile</a>
+
+      <div type="container" class="sidefoot">
+        <footer>
+          <a href="#">More</a>
+        </footer>
+      </div>
+    </div>
+
+
+    <!-- Konten halaman -->
+    <div style="margin-left: 200px; padding: 20px">
+      <h2>Tes</h2>
+      <p>
+        Tes
+      </p>
+    </div>
+  </body>
+</html>
