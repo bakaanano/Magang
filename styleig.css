@@ -3,11 +3,11 @@
     width: 200px; 
     position: fixed;
     left: 0;
-    top: 45px;
+    top: 50px;
     background-color: #ffffff;
     overflow-x: hidden;
     padding-top: 20px;
-    z-index: -1;
+    z-index: -0.5;
   }
 
   /* Style untuk link dalam sidebar */
@@ -39,7 +39,7 @@
   }
 
   .sidehead{
-    padding-top: 10px;
+    padding-top: 2px;
     font-size: 5px;
   }
 
@@ -50,6 +50,8 @@
   }
 
   .teksig {
-    width: 120px;
+    width: 125px;
     margin-left: 10px;
+    position: relative;
+    padding-bottom: 10px;
   }
