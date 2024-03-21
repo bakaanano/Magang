@@ -8,6 +8,8 @@
     overflow-x: hidden;
     padding-top: 20px;
     z-index: -0.5;
+    border: #000000 1px;
+    border-style: solid;
   }
 
   /* Style untuk link dalam sidebar */
@@ -62,4 +64,15 @@
 
   .content {
     border:#555 1px;
+    border-style: solid;
+    width: 100%;
+    max-width: 614px;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .post {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
   }
