@@ -152,8 +152,10 @@
 
   .sideright {
     display: flex;
-    max-width: 290px;
+    flex-direction: column;
+    width: 20px;
     position: fixed;
     left: 80%;
     border-left: 1px solid;
+    padding-left: 10px;
   }
