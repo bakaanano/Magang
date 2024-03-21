@@ -1,3 +1,10 @@
+.main {
+  margin-left: 200px;
+  padding: 20px;
+  display: flex;
+  flex-direction: row;
+}
+
 .sidebar {
     height: 100%;
     width: 200px; 
@@ -149,5 +156,5 @@
     max-width: 290px;
     position: fixed;
     left: 80%;
-    border: 1px solid;
+    border-left: 1px solid;
   }
