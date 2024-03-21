@@ -15,8 +15,7 @@
     overflow-x: hidden;
     padding-top: 20px;
     z-index: -0.5;
-    border: #000000 1px;
-    border-style: solid;
+    border-right: 1px solid;
   }
 
   /* Style untuk link dalam sidebar */
