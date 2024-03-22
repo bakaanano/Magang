@@ -6,156 +6,154 @@
 }
 
 .sidebar {
-    height: 100%;
-    width: 200px; 
-    position: fixed;
-    left: 0;
-    top: 50px;
-    background-color: #ffffff;
-    overflow-x: hidden;
-    padding-top: 20px;
-    z-index: -0.5;
-    border-right: 1px solid;
-  }
+  height: 100%;
+  width: 200px;
+  position: fixed;
+  left: 0;
+  background-color: #ffffff;
+  overflow-x: hidden;
+  z-index: -0.5;
+  border-right: 1px solid;
+}
 
-  /* Style untuk link dalam sidebar */
-  .sidebar a {
-    padding-top: 20px;
-    padding-bottom: 15px;
-    padding-left: 20px;
-    text-decoration: none;
-    font-size: 18px;
-    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-    color: #818181;
-    display: flex;
-  }
+/* Style untuk link dalam sidebar */
+.sidebar a {
+  padding-top: 20px;
+  padding-bottom: 15px;
+  padding-left: 20px;
+  text-decoration: none;
+  font-size: 18px;
+  font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+  color: #818181;
+  display: flex;
+}
 
-  /* Style untuk link yang aktif (current) */
-  .sidebar a.active {
-    background-color: #555;
-    color: white;
-  }
+/* Style untuk link yang aktif (current) */
+.sidebar a.active {
+  background-color: #555;
+  color: white;
+}
 
-  /* Style untuk link ketika dihover */
-  .sidebar a:hover:not(.active) {
-    background-color: #555;
-    color: white;
-  }
+/* Style untuk link ketika dihover */
+.sidebar a:hover:not(.active) {
+  background-color: #555;
+  color: white;
+}
 
-  .sidefoot{
-    padding-top: 50px;
-  }
+.sidefoot {
+  padding-top: 50px;
+}
 
-  .containersidehead{
-    padding-top: 2px;
-    font-size: 5px;
-  }
+.containersidehead {
+  padding-top: 2px;
+  font-size: 5px;
+}
 
-  .icon{
-    width: 20px;
-    margin-left: 10px;
-    margin-right: 10px;
-  }
+.icon {
+  width: 20px;
+  margin-left: 10px;
+  margin-right: 10px;
+}
 
-  .teksig {
-    width: 125px;
-    margin-left: 10px;
-    position: relative;
-    padding-bottom: 10px;
-  }
-  
-  img {
-    width: 100px;
-  }
+.teksig {
+  width: 125px;
+  margin-left: 10px;
+  position: relative;
+  padding-bottom: 10px;
+}
 
-  .content {
-    border:#555 1px;
-    border-style: solid;
-    width: 100%;
-    max-width: 614px;
-    display: flex;
-    flex-direction: column;
-  }
+img {
+  width: 100px;
+}
 
-  .post {
-    display: flex;
-    flex-direction: column;
-    flex: 1;
-  }
+.content {
+  border: #555 1px;
+  border-style: solid;
+  width: 100%;
+  max-width: 614px;
+  display: flex;
+  flex-direction: column;
+}
 
-  .posthead {
-    background-color: #ffffff;
-    border-bottom: 1px solid;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 16px;
-  }
+.post {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+}
 
-  .postprofile {
-    display: flex;
-    align-items: center;
-    gap: 12px;
-  }
+.posthead {
+  background-color: #ffffff;
+  border-bottom: 1px solid;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 16px;
+}
 
-  .postmore {
-    background-color: transparent;
-    border: none;
-    cursor: pointer;
-  }
+.postprofile {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
 
-  .postcon {
-    display: flex;
-    position: relative;
-  }
+.postmore {
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+}
 
-  .postmedia {
-    display: flex;
-    overflow-y: hidden;
-    overflow-x: auto;
-    width: 100%;
-    scroll-snap-type: x mandatory;
-    scroll-behavior: smooth;
-    scrollbar-width: none;
-  }
+.postcon {
+  display: flex;
+  position: relative;
+}
 
-  .postfoot {
-    background-color: #ffffff;
-    display: flex;
-    flex-direction: column;
-    gap: 4px;
-    padding: 4px 8px 12px;
-  }
+.postmedia {
+  display: flex;
+  overflow-y: hidden;
+  overflow-x: auto;
+  width: 100%;
+  scroll-snap-type: x mandatory;
+  scroll-behavior: smooth;
+  scrollbar-width: none;
+}
 
-  .postbutton {
-    display: flex;
-    position: relative;
-  }
+.postfoot {
+  background-color: #ffffff;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  padding: 4px 8px 12px;
+}
 
-  .postbuttonlove {
-    border: 1px solid;
-    cursor: pointer;
-    padding: 8px;
-  }
+.postbutton {
+  display: flex;
+  position: relative;
+}
 
-  .postbuttoncomment {
-    border: 1px solid;
-    cursor: pointer;
-    padding: 8px;
-  }
+.postbuttonlove {
+  border: 1px solid;
+  cursor: pointer;
+  padding: 8px;
+}
 
-  .postbuttonshare {
-    border: 1px solid;
-    cursor: pointer;
-    padding: 8px;
-  }
+.postbuttoncomment {
+  border: 1px solid;
+  cursor: pointer;
+  padding: 8px;
+}
 
-  .sideright {
-    display: flex;
-    flex-direction: column;
-    width: 20px;
-    position: fixed;
-    left: 80%;
-    border-left: 1px solid;
-    padding-left: 10px;
-  }
+.postbuttonshare {
+  border: 1px solid;
+  cursor: pointer;
+  padding: 8px;
+}
+
+.sideright {
+  display: flex;
+  flex-direction: column;
+  width: 20px;
+  position: fixed;
+  left: 80%;
+  border-left: 1px solid;
+  padding-left: 10px;
+}
