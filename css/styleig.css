@@ -73,6 +73,7 @@ img {
   max-width: 614px;
   display: flex;
   flex-direction: column;
+  margin: 100px;
 }
 
 .post {
@@ -115,6 +116,7 @@ img {
   scroll-snap-type: x mandatory;
   scroll-behavior: smooth;
   scrollbar-width: none;
+  padding: 20px;
 }
 
 .postfoot {
