@@ -74,12 +74,15 @@ img {
   display: flex;
   flex-direction: column;
   margin: 110px;
+  gap: 25px;
+  margin-top: 30px;
 }
 
 .post {
   display: flex;
   flex-direction: column;
   flex: 1;
+  border-top: 1px solid;
 }
 
 .posthead {
@@ -159,4 +162,58 @@ img {
   border-left: 1px solid;
   padding-left: 10px;
   margin-top: 80px;
+}
+
+.siderightuserpf {
+  display: flex;
+  align-items: center;
+  margin: 20px 0 22px;
+}
+
+.siderightuseravatar{
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  margin-right: 12px;
+  flex-shrink: 0;
+  overflow: hidden;
+  position: relative;
+}
+
+.siderightuserinfo {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  flex: 1px;
+  gap: 4px;
+}
+
+.siderightuserbutton {
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  font-size: 12px;
+  font-weight: 500;
+  color: #189bf6;
+}
+
+.story {
+  width: 100%;
+  background-color: #ffffff;
+  padding: 16px 0;
+  flex-shrink: 0;
+  position: relative;
+  overflow: hidden;
+  border-bottom: 1px solid;
+}
+
+.storiescontent {
+  display: flex;
+  overflow-x: auto;
+  overflow-y: hidden;
+  gap: 16px;
+  padding: 0 16px;
+  position: relative;
+  scroll-behavior: smooth;
+  scrollbar-width: none;
 }
