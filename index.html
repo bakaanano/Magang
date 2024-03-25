@@ -7,7 +7,7 @@
     <link rel="icon" type="image/x-icon" href="Pic/instagram-logo.png" />
     <link rel="stylesheet" href="css/styleig.css" />
   </head>
-  <body>
+  <bod  y>
     <!-- Sidebar -->
     <div class="container">
       <div class="sidebar">
@@ -17,17 +17,38 @@
           </a>
         </header>
         <a href="index.html" class="active">
-          <img src="Pic/logo-home.png" class="icon" />Home
+          <i data-feather="home"></i>
+          Home
         </a>
-        <a href="#">Search</a>
-        <a href="#">Explore</a>
-        <a href="#">Reels</a>
-        <a href="#">Messages</a>
-        <a href="#">Notification</a>
-        <a href="#">Create</a>
+        <a href="#">
+          <i data-feather="search"></i>
+          Search
+        </a>
+        <a href="#">
+          <i data-feather="compass"></i>
+          Explore
+        </a>
+        <a href="#">
+          Reels
+        </a>
+        <a href="#">
+          <i data-feather="message-circle"></i>
+          Messages
+        </a>
+        <a href="#">
+          <i data-feather="hearth"></i>
+          Notification
+        </a>
+        <a href="#">
+          <i data-feather="plus-square"></i>
+          Create
+        </a>
         <a href="#">Profile</a>
-        <footer class="sidefoot">
-          <a href="#">More</a>
+          <footer class="sidefoot">
+          <a href="#">
+            <i data-feather="more-vertical"></i>
+            More
+          </a>
         </footer>
       </div>
       <!-- Konten halaman -->
@@ -121,5 +142,11 @@
         </div>
       </div>
     </div>
+    <!-- choose one -->
+    <script src="https://unpkg.com/feather-icons"></script>
+    <script src="https://cdn.jsdelivr.net/npm/feather-icons/dist/feather.min.js"></script>
+    <script>
+      feather.replace();
+    </script> 
   </body>
 </html>
