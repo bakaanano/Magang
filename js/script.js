@@ -14,7 +14,7 @@ document.getElementById('demo2').innerHTML = "C. Diskon 10% menjadi =" + totalpe
 
 let makanan_menu = [" Es Kopi Susu : Rp. 10000", 
                     " Roti Bakar : Rp. 25000",
-                    " Ice Cream : Rp. 15000",
+                    " Tahu Telor : Rp. 15000",
                     " Nasi Goreng : Rp. 12000"];
 const harga1 = 10000;
 const harga2 = 25000;
