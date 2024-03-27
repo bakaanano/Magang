@@ -43,10 +43,10 @@ document.getElementById('tes2').innerHTML = "C. Diskon 10% menjadi =" + hargaakh
 */
 
 let lm = [
-    {'Menu': 'Es Kopi Susu', 'harga' : 'Rp. 10.000'},
-    {'Menu': 'Roti Bakar', 'harga' : 'Rp. 25000'},
-    {'Menu': 'Ice Cream', 'harga' : 'Rp. 15000'},
-    {'Menu': 'Nasi Goreng', 'harga': 'Rp. 12000'}
+    {Menu: 'Es Kopi Susu', harga : 'Rp. 10.000'},
+    {Menu: 'Roti Bakar', harga : 'Rp. 25000'},
+    {Menu: 'Ice Cream', harga : 'Rp. 15000'},
+    {Menu: 'Nasi Goreng', harga: 'Rp. 12000'}
 ]
 const price1 = 10000;
 const price2 = 25000;
@@ -57,7 +57,7 @@ let kondis = 0.1 * priceA;
 let priceB = priceA - kondis;
 let list = "";
 for (let i = 0; i < lm.length; i++) {
-    list +=`<li>${("Menu :" + lm[i]['Menu'] + ", Harga: " + lm[i]['harga'])}</li><br>`; 
+    list +=`<li>${(/*"Menu :" +*/ lm[i]['Menu'] + " : " + lm[i]['harga'])}</li><br>`; 
 }
 document.getElementById('ob').innerHTML = list;
 document.getElementById('ob1').innerHTML = "B. Total Pembayaran = " + priceA;
