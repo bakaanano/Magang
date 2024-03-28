@@ -43,23 +43,21 @@ document.getElementById('tes2').innerHTML = "C. Diskon 10% menjadi =" + hargaakh
 */
 
 let lm = [
-    {Menu: 'Es Kopi Susu', harga : 'Rp. 10.000'},
-    {Menu: 'Roti Bakar', harga : 'Rp. 25000'},
-    {Menu: 'Ice Cream', harga : 'Rp. 15000'},
-    {Menu: 'Nasi Goreng', harga: 'Rp. 12000'}
+    { Menu: 'Es Kopi Susu', harga: 10000 },
+    { Menu: 'Roti Bakar', harga: 25000    },
+    { Menu: 'Ice Cream', harga: 15000     },
+    { Menu: 'Nasi Goreng', harga: 12000   }
 ]
-const price1 = 10000;
-const price2 = 25000;
-const price3 = 15000;
-const price4 = 12000;
-let priceA = price1 + price2 + price3 + price4;
+
+let priceA = lm[0].harga + lm[1].harga + lm[2].harga + lm[3].harga;
 let kondis = 0.1 * priceA;
 let priceB = priceA - kondis;
 let list = "";
 for (let i = 0; i < lm.length; i++) {
-    list +=`<li>${(/*"Menu :" +*/ lm[i]['Menu'] + " : " + lm[i]['harga'])}</li><br>`; 
+    // list +=`<li>${(/*"Menu :" +*/ lm[i]['Menu'] /*+ " : " + lm[i]['harga']*/)}</li><br>`
+    list += `<li>${lm[i].Menu} : Rp. ${lm[i].harga} </li>`
 }
 document.getElementById('ob').innerHTML = list;
-document.getElementById('ob1').innerHTML = "B. Total Pembayaran = " + priceA;
-document.getElementById('ob2').innerHTML = "C. Diskon 10% menjadi =" + priceB;
+document.getElementById('ob1').innerHTML = "B. Total Pembayaran =  Rp." + priceA;
+document.getElementById('ob2').innerHTML = "C. Diskon 10% menjadi = Rp." + priceB;
 
