@@ -57,12 +57,12 @@ document.getElementById('ob2').innerHTML = "C. Diskon 10% menjadi = Rp." + price
 
 // TUGAS 3 Penambahan IF 
 let jsm = [
-    { unem: 'Nasi Pecel' , garha: 10000 , variant: ['original' , 'pedas' , 'pedas banget']},
-    { unem: 'Nasi Jagung' , garha: 25000, variant: ['original' , 'pedas' , 'pedas banget']},
-    { unem: 'Nasi Ayam' , garha: 15000, variant: ['original' , 'pedas' , 'pedas banget']},
-    { unem: 'Nasi Krawu' , garha: 12000, variant: ['original' , 'pedas' , 'pedas banget']},
-    { unem: 'Nasi Rendang', garha: 20000, variant: ['original' , 'pedas' , 'pedas banget']},
-    { unem: 'Nasi Lele' , garha: 18000, variant: ['original' , 'pedas' , 'pedas banget']}
+    { unem: 'Nasi Pecel' , garha: 10000 , variant: ['Original' , 'pedas' , 'pedas banget']},
+    { unem: 'Nasi Jagung' , garha: 25000, variant: ['Original' , 'pedas' , 'pedas banget']},
+    { unem: 'Nasi Ayam' , garha: 15000, variant: ['Original' , 'pedas' , 'pedas banget']},
+    { unem: 'Nasi Krawu' , garha: 12000, variant: ['Original' , 'pedas' , 'pedas banget']},
+    { unem: 'Nasi Rendang', garha: 20000, variant: ['Original' , 'pedas' , 'pedas banget']},
+    { unem: 'Nasi Lele' , garha: 18000, variant: ['Original' , 'pedas' , 'pedas banget']}
 ]
 
 const pesan = ["Nasi Pecel" , "Nasi Rendang" , "Nasi Jagung"];
@@ -78,14 +78,12 @@ for (let i = 0; i < jsm.length; i++) {
 
 for (let x = 0; x < pesan.length; x++){
     for(let y = 0; y < jsm.length; y++){
-        // console.log(pesan[x]);
         if(pesan[x] === jsm[y].unem) {
             if(pesan[x] === "Nasi Pecel"){
                 totalPayment += 5000;
-                // console.log(totalPayment)
+                
             } else {
                 totalPayment += jsm[y].garha;
-                // console.log(totalPayment)
             }
         }
     }
@@ -94,15 +92,25 @@ for (let z = 0; z <pesan.length; z++){
     for(let p = 0; p < jsm.length; p++){
         if(pesan[z] === jsm[p].unem) {
             if(pesan[z] === "Nasi Pecel"){
-                ao += `<li>${pesan[z]} : Rp. 5000 </li>`;
+                jsm[p].variant = "Pedas Banget";
+                lvl = level[4]
+                ao += `<li>${pesan[z]} : Rp. 5000 Variant ${jsm[p].variant} Level: ${lvl}</li>`;
+
+            } else if(pesan[z] === "Nasi Rendang") {
+                jsm[p].variant = "Pedas";
+                lvl = level[1]
+                ao += `<li>${pesan[z]} : Rp. ${jsm[p].garha} Variant ${jsm[p].variant} Level: ${lvl}</li>`;
+                
+            } else if (pesan[z] === "Nasi Jagung") {
+                jsm[p].variant = "Original"
+                ao += `<li>${pesan[z]} : Rp. ${jsm[p].garha} Variant ${jsm[p].variant} </li>`;
+                
             } else {
                 ao += `<li>${pesan[z]} : Rp. ${jsm[p].garha}</li>`;
             }
             
         }
     }
-    
-    // console.log(jsm[z].garha)
 }
 
 let potongan = totalPayment * 0.1;
@@ -114,33 +122,6 @@ if (isMember){
 } else {
     akhir = totalPayment;
 }
-/*for (let x = 0; x < jsm.length; x++){
-    if(pesan.includes(jsm[x].unem)) {
-        let variant = [x].values[1];
-        let lvl = "";
-        
-        if(jsm[x].unem === "Nasi Jagung") {
-            variant = "Original"
-        } else if(jsm[x].unem === "Nasi Rendang"){
-            lvl = level[1];
-            variant = "Pedas";
-        } else if (jsm[x].unem === "Nasi Pecel"){
-            if(isMember){
-                totalPayment += 5000;
-                ao += `<li>Nasi Pecel: Rp. 5000 (PROMO) <br> Variant: ${variant}</li>`;
-            }
-        }
-    }
-    if (jsm[x].unem === "Nasi Pecel" && !isMember){
-        totalPayment += 5000;
-        ao += `<li>Nasi Pecel: Rp. 5000 (PROMO) <br> Variant: ${variant}</li>`;
-    }
-    if(jsm[x].unem === "Nasi Jagung" || jsm[x].unem === "Nasi Rendang") {
-        totalPayment += jsm[x].garha;
-        ao += `<li>${jsm[x].unem}: Rp. ${jsm[x].garha} <br> Variant: ${variant} ${lvl > 0 ? "Level: " + lvl : ""}</li>`;
-
-    }
-}*/
 
 document.getElementById('ifel').innerHTML = userm;
 document.getElementById('ifel1').innerHTML = ao;
