@@ -34,13 +34,7 @@ document.getElementById('tes').innerHTML = Menu;
 document.getElementById('tes1').innerHTML = "B. Total Pembayaran = " + hargaawal;
 document.getElementById('tes2').innerHTML = "C. Diskon 10% menjadi =" + hargaakhir;
 
-
-/*let mm = [" Es Kopi Susu : Rp. 10000", 
-            " Roti Bakar : Rp. 25000",
-            " Ice Cream : Rp. 15000",
-            " Nasi Goreng : Rp. 12000",
-            "Ayam Goreng : Rp. 20000"];
-*/
+//  TUGAS 2 
 
 let lm = [
     { Menu: 'Es Kopi Susu', harga: 10000 },
@@ -61,3 +55,64 @@ document.getElementById('ob').innerHTML = list;
 document.getElementById('ob1').innerHTML = "B. Total Pembayaran =  Rp." + priceA;
 document.getElementById('ob2').innerHTML = "C. Diskon 10% menjadi = Rp." + priceB;
 
+// TUGAS 3 Penambahan IF 
+let jsm = [
+    { unem: 'Nasi Pecel' , garha: 10000 , variant: ['original' , 'pedas' , 'pedas banget']},
+    { unem: 'Nasi Jagung' , garha: 25000, variant: ['original' , 'pedas' , 'pedas banget']},
+    { unem: 'Nasi Ayam' , garha: 15000, variant: ['original' , 'pedas' , 'pedas banget']},
+    { unem: 'Nasi Krawu' , garha: 12000, variant: ['original' , 'pedas' , 'pedas banget']},
+    { unem: 'Nasi Rendang', garha: 20000, variant: ['original' , 'pedas' , 'pedas banget']},
+    { unem: 'Nasi Lele' , garha: 18000, variant: ['original' , 'pedas' , 'pedas banget']}
+]
+
+const pesan = ["Nasi Pecel" , "Nasi Lele" , "Nasi Jagung"];
+const isMember = true
+let totalPayment = 0;
+const level = [1 , 2 , 3 , 4 , 5 , 6 , 7 , 8 , 9 , 10]
+let userm = "";
+let ao = "";
+
+for (let i = 0; i < jsm.length; i++) {
+    userm += `<li>${jsm[i].unem} : Rp. ${jsm[i].garha} <br> variant: ${jsm[i].variant.join(" , ")}</li>`
+}
+
+/*for (let x = 0; x < jsm.length; x++){
+    if(pesan.includes(jsm[x].unem)) {
+        let variant = [x].values[1];
+        let lvl = "";
+        
+        if(jsm[x].unem === "Nasi Jagung") {
+            variant = "Original"
+        } else if(jsm[x].unem === "Nasi Rendang"){
+            lvl = level[1];
+            variant = "Pedas";
+        } else if (jsm[x].unem === "Nasi Pecel"){
+            if(isMember){
+                totalPayment += 5000;
+                ao += `<li>Nasi Pecel: Rp. 5000 (PROMO) <br> Variant: ${variant}</li>`;
+            }
+        }
+    }
+    if (jsm[x].unem === "Nasi Pecel" && !isMember){
+        totalPayment += 5000;
+        ao += `<li>Nasi Pecel: Rp. 5000 (PROMO) <br> Variant: ${variant}</li>`;
+    }
+    if(jsm[x].unem === "Nasi Jagung" || jsm[x].unem === "Nasi Rendang") {
+        totalPayment += jsm[x].garha;
+        ao += `<li>${jsm[x].unem}: Rp. ${jsm[x].garha} <br> Variant: ${variant} ${lvl > 0 ? "Level: " + lvl : ""}</li>`;
+
+    }
+}
+
+let potongan = 0.1;
+let pajak = 0.11;
+let akhir = totalPayment;
+
+if (isMember){
+    akhir = totalPayment - (totalPayment * potongan) + (totalPayment * pajak);
+} else {
+    akhir = totalPayment;
+}*/
+
+document.getElementById('ifel').innerHTML = userm;
+document.getElementById('ifel1').innerHTML = "Total Keseluruhan" + akhir;
