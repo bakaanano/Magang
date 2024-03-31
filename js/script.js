@@ -65,7 +65,7 @@ let jsm = [
     { unem: 'Nasi Lele' , garha: 18000, variant: ['original' , 'pedas' , 'pedas banget']}
 ]
 
-const pesan = ["Nasi Pecel" , "Nasi Lele" , "Nasi Jagung"];
+const pesan = ["Nasi Pecel" , "Nasi Rendang" , "Nasi Jagung"];
 const isMember = true
 let totalPayment = 0;
 const level = [1 , 2 , 3 , 4 , 5 , 6 , 7 , 8 , 9 , 10]
@@ -78,14 +78,31 @@ for (let i = 0; i < jsm.length; i++) {
 
 for (let x = 0; x < pesan.length; x++){
     for(let y = 0; y < jsm.length; y++){
+        // console.log(pesan[x]);
         if(pesan[x] === jsm[y].unem) {
             if(pesan[x] === "Nasi Pecel"){
                 totalPayment += 5000;
+                // console.log(totalPayment)
             } else {
                 totalPayment += jsm[y].garha;
+                // console.log(totalPayment)
             }
         }
     }
+}
+for (let z = 0; z <pesan.length; z++){
+    for(let p = 0; p < jsm.length; p++){
+        if(pesan[z] === jsm[p].unem) {
+            if(pesan[z] === "Nasi Pecel"){
+                ao += `<li>${pesan[z]} : Rp. 5000 </li>`;
+            } else {
+                ao += `<li>${pesan[z]} : Rp. ${jsm[p].garha}</li>`;
+            }
+            
+        }
+    }
+    
+    // console.log(jsm[z].garha)
 }
 
 let potongan = totalPayment * 0.1;
@@ -126,4 +143,5 @@ if (isMember){
 }*/
 
 document.getElementById('ifel').innerHTML = userm;
-document.getElementById('ifel1').innerHTML = "Total Keseluruhan" + akhir;
+document.getElementById('ifel1').innerHTML = ao;
+document.getElementById('ifel2').innerHTML = " Total Keseluruhan : Rp. " + akhir;
