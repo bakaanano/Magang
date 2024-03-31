@@ -76,6 +76,27 @@ for (let i = 0; i < jsm.length; i++) {
     userm += `<li>${jsm[i].unem} : Rp. ${jsm[i].garha} <br> variant: ${jsm[i].variant.join(" , ")}</li>`
 }
 
+for (let x = 0; x < pesan.length; x++){
+    for(let y = 0; y < jsm.length; y++){
+        if(pesan[x] === jsm[y].unem) {
+            if(pesan[x] === "Nasi Pecel"){
+                totalPayment += 5000;
+            } else {
+                totalPayment += jsm[y].garha;
+            }
+        }
+    }
+}
+
+let potongan = totalPayment * 0.1;
+let pajak = totalPayment * 0.11;
+let akhir = totalPayment;
+
+if (isMember){
+    akhir = totalPayment - potongan + pajak;
+} else {
+    akhir = totalPayment;
+}
 /*for (let x = 0; x < jsm.length; x++){
     if(pesan.includes(jsm[x].unem)) {
         let variant = [x].values[1];
@@ -102,16 +123,6 @@ for (let i = 0; i < jsm.length; i++) {
         ao += `<li>${jsm[x].unem}: Rp. ${jsm[x].garha} <br> Variant: ${variant} ${lvl > 0 ? "Level: " + lvl : ""}</li>`;
 
     }
-}
-
-let potongan = 0.1;
-let pajak = 0.11;
-let akhir = totalPayment;
-
-if (isMember){
-    akhir = totalPayment - (totalPayment * potongan) + (totalPayment * pajak);
-} else {
-    akhir = totalPayment;
 }*/
 
 document.getElementById('ifel').innerHTML = userm;
