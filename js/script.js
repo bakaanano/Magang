@@ -142,29 +142,35 @@ listmhs = "";
 let kursus = '';
 
 for (let i = 0; i < mahasiswa.length; i++) {
-    let Nama = mahasiswa[i].Nama;
-    let Nilai = mahasiswa[i].Nilai;
-}
+    let mana = mahasiswa[i].Nama;
+    let laini = mahasiswa[i].Nilai;
+    
 
-if(Nama === 'Rafi'){
+if( mana === 'Rafi'){
     kursus = 'Figma';
+} else {
+    kursus =  "";
 }
 
 if(kursus === 'Figma'){
-    Nilai += 10;
+    laini += 10;
 }
 
 let Predikat = "";
-if(Nilai >= 80 && Nilai <= 100){
+if(laini >= 80 && laini <= 100){
     Predikat = 'A';
-} else if (Nilai >= 70 && Nilai < 80){
+} else if (laini >= 70 && laini < 80){
     Predikat = 'B';
-} else if (Nilai >= 60 && Nilai < 70){
+} else if (laini >= 60 && laini < 70){
     Predikat = 'C';
-} else if (Nilai >= 50 && Nilai < 60){
+} else if (laini >= 50 && laini < 60){
     Predikat = 'D';
 } else {
     Predikat = 'E';
+}
+
+listmhs += `<li>Nama Mahasiswa: ${mana} Nilai: ${laini} Predikat: ${Predikat}</li>`;
+
 }
 
 document.getElementById('lefi').innerHTML = listmhs;
