@@ -65,7 +65,7 @@ let jsm = [
     { unem: 'Nasi Lele' , garha: 18000, variant: ['Original' , 'pedas' , 'pedas banget']}
 ]
 
-const pesan = ["Nasi Pecel" , "Nasi Rendang" , "Nasi Jagung"];
+const pesan = ["Nasi Pecel" , "Nasi Jagung" , "Nasi Rendang"];
 const isMember = true
 let totalPayment = 0;
 const level = [1 , 2 , 3 , 4 , 5 , 6 , 7 , 8 , 9 , 10]
@@ -125,4 +125,47 @@ if (isMember){
 
 document.getElementById('ifel').innerHTML = userm;
 document.getElementById('ifel1').innerHTML = ao;
-document.getElementById('ifel2').innerHTML = " Total Keseluruhan : Rp. " + akhir;
+document.getElementById('ifel2').innerHTML = isMember;
+document.getElementById('ifel3').innerHTML = " Total Keseluruhan : Rp. " + akhir;
+
+
+// Tugas 4 If Else 
+let mahasiswa = [
+    {Nama: 'Andreas' , Nilai: 85},
+    {Nama: 'Taufiq' , Nilai: 85},
+    {Nama: 'Nathan' , Nilai: 85},
+    {Nama: 'Rafi' , Nilai: 85},
+    {Nama: 'Yardan' , Nilai: 85},
+]
+
+listmhs = "";
+let kursus = '';
+
+for (let i = 0; i < mahasiswa.length; i++) {
+    let Nama = mahasiswa[i].Nama;
+    let Nilai = mahasiswa[i].Nilai;
+}
+
+if(Nama === 'Rafi'){
+    kursus = 'Figma';
+}
+
+if(kursus === 'Figma'){
+    Nilai += 10;
+}
+
+let Predikat = "";
+if(Nilai >= 80 && Nilai <= 100){
+    Predikat = 'A';
+} else if (Nilai >= 70 && Nilai < 80){
+    Predikat = 'B';
+} else if (Nilai >= 60 && Nilai < 70){
+    Predikat = 'C';
+} else if (Nilai >= 50 && Nilai < 60){
+    Predikat = 'D';
+} else {
+    Predikat = 'E';
+}
+
+document.getElementById('lefi').innerHTML = listmhs;
+document.getElementById('lefi1').innerHTML = Predikat;
