@@ -157,7 +157,9 @@ if(kursus === 'Figma'){
 }
 
 let Predikat = "";
-if(laini >= 80 && laini <= 100){
+if(kursus === 'Figma'){
+    Predikat = 'A +';
+}else if(laini >= 80 && laini <= 100){
     Predikat = 'A';
 } else if (laini >= 70 && laini < 80){
     Predikat = 'B';
