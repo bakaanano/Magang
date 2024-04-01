@@ -131,22 +131,21 @@ document.getElementById('ifel3').innerHTML = " Total Keseluruhan : Rp. " + akhir
 
 // Tugas 4 If Else 
 let mahasiswa = [
-    {Nama: 'Andreas' , Nilai: 85},
-    {Nama: 'Taufiq' , Nilai: 85},
-    {Nama: 'Nathan' , Nilai: 85},
-    {Nama: 'Rafi' , Nilai: 85},
-    {Nama: 'Yardan' , Nilai: 85},
+    {Nama: 'Andreas' , Nilai: 90 , Figma: true},
+    {Nama: 'Taufiq' , Nilai: 85 , Figma: false},
+    {Nama: 'Nathan' , Nilai: 85 , Figma: false},
+    {Nama: 'Rafi' , Nilai: 85 , Figma: false},
+    {Nama: 'Yardan' , Nilai: 85 , Figma: true},
 ]
 
 listmhs = "";
-let kursus = '';
+// let kursus = '';
 
 for (let i = 0; i < mahasiswa.length; i++) {
     let mana = mahasiswa[i].Nama;
     let laini = mahasiswa[i].Nilai;
     
-
-if( mana === 'Rafi'){
+/*if( mana === 'Andreas'){
     kursus = 'Figma';
 } else {
     kursus =  "";
@@ -155,11 +154,15 @@ if( mana === 'Rafi'){
 if(kursus === 'Figma'){
     laini += 10;
 }
-
+*/
 let Predikat = "";
-if(kursus === 'Figma'){
+if(mahasiswa[i].Figma){
+    laini += 10;
+}
+
+if(laini >= 100){
     Predikat = 'A +';
-}else if(laini >= 80 && laini <= 100){
+}else if(laini >= 80 && laini < 100){
     Predikat = 'A';
 } else if (laini >= 70 && laini < 80){
     Predikat = 'B';
@@ -171,7 +174,7 @@ if(kursus === 'Figma'){
     Predikat = 'E';
 }
 
-listmhs += `<li>Nama Mahasiswa: ${mana} Nilai: ${laini} Predikat: ${Predikat}</li>`;
+listmhs += `<li>Nama: ${mana} Nilai: ${laini} Predikat: ${Predikat}</li>`;
 
 }
 
