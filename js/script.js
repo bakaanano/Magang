@@ -131,11 +131,13 @@ document.getElementById('ifel3').innerHTML = " Total Keseluruhan : Rp. " + akhir
 
 // Tugas 4 If Else 
 let mahasiswa = [
-    {Nama: 'Andreas' , Nilai: 90 , Figma: true},
-    {Nama: 'Taufiq' , Nilai: 85 , Figma: false},
-    {Nama: 'Nathan' , Nilai: 85 , Figma: false},
-    {Nama: 'Rafi' , Nilai: 85 , Figma: false},
-    {Nama: 'Yardan' , Nilai: 85 , Figma: true},
+    {Nama: 'Andreas' , Nilai: 50 , Figma: false},
+    {Nama: 'Taufiq' , Nilai: 99 , Figma: false},
+    {Nama: 'Nathan' , Nilai: 90 , Figma: false},
+    {Nama: 'Rafi' , Nilai: 90 , Figma: true},
+    {Nama: 'Yardan' , Nilai: 70 , Figma: false},
+    {Nama: 'Vega' , Nilai: 60 , Figma: false},
+    {Nama: 'Elvis' , Nilai: 10 , Figma: true},
 ]
 
 listmhs = "";
@@ -144,6 +146,12 @@ listmhs = "";
 for (let i = 0; i < mahasiswa.length; i++) {
     let mana = mahasiswa[i].Nama;
     let laini = mahasiswa[i].Nilai;
+    let Predikat = "";
+    if(mahasiswa[i].Figma){
+        laini += 10;
+    } else {
+        laini += 0;
+    }
     
 /*if( mana === 'Andreas'){
     kursus = 'Figma';
@@ -155,26 +163,21 @@ if(kursus === 'Figma'){
     laini += 10;
 }
 */
-let Predikat = "";
-if(mahasiswa[i].Figma){
-    laini += 10;
-}
+    if(laini >= 100){
+        Predikat = 'A +';
+    }else if(laini >= 80 && laini < 100){
+        Predikat = 'A';
+    } else if (laini >= 70 && laini < 80){
+        Predikat = 'B';
+    } else if (laini >= 60 && laini < 70){
+        Predikat = 'C';
+    } else if (laini >= 50 && laini < 60){
+        Predikat = 'D';
+    } else {
+        Predikat = 'E';
+    }
 
-if(laini >= 100){
-    Predikat = 'A +';
-}else if(laini >= 80 && laini < 100){
-    Predikat = 'A';
-} else if (laini >= 70 && laini < 80){
-    Predikat = 'B';
-} else if (laini >= 60 && laini < 70){
-    Predikat = 'C';
-} else if (laini >= 50 && laini < 60){
-    Predikat = 'D';
-} else {
-    Predikat = 'E';
-}
-
-listmhs += `<li>Nama: ${mana} Nilai: ${laini} Predikat: ${Predikat}</li>`;
+    listmhs += `<li>Nama: ${mana} Nilai: ${laini} Predikat: ${Predikat}</li>`;
 
 }
 
