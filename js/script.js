@@ -183,3 +183,38 @@ if(kursus === 'Figma'){
 
 document.getElementById('lefi').innerHTML = listmhs;
 document.getElementById('lefi1').innerHTML = Predikat;
+
+// Tugas 5 JavaScript
+const daftar = {
+    status: 200,
+    message: 'View data collection',
+    data: [
+        {id: 1, nama: 'Vega', age: 25},
+        {id: 2, nama: 'Yardan', age: 50},
+        {id: 3, nama: 'Taufiq', age: 64},
+        {id: 4, nama: 'Nathan', age: 14},
+        {id: 5, nama: 'Andreas', age: 29},
+        {id: 6, nama: 'Rafi', age: 44},
+        {id: 7, nama: 'Ilham', age: 53},
+        {id: 8, nama: 'Bram', age: 32},
+        {id: 9, nama: 'Fandi', age: 10},
+        {id: 10, nama: 'Riza', age: 78}
+    ]
+};
+
+tableBody = document.querySelector('#table');
+let i = 0;
+while (i < daftar.data.length){
+    // tableBody.innerHTML += createTableRow(daftar.data[i]);
+    const row = document.createElement('tr')
+    const cell = document.createElement('td')
+    row = table.insertRow(i);
+    cell = table.insertCell(i);
+    tableBody.innerHTML += `
+    <tr>
+        <td>${daftar.data[i].id}</td>
+        <td>${daftar.data[i].nama}</td>
+        <td>${daftar.data[i].age}</td>
+    </tr>`;
+    i++;
+}

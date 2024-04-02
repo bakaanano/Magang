@@ -953,6 +953,11 @@ img {
     font-family: Arial, Helvetica, sans-serif;
 }
 
+table, th, td {
+  border: 1px solid black;
+  padding: 8px;
+  text-align: center;
+}
 /*p {
   
     border-radius: 10px;
