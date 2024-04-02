@@ -141,12 +141,13 @@ let mahasiswa = [
 ]
 
 listmhs = "";
+let Predikat = "";
 // let kursus = '';
 
 for (let i = 0; i < mahasiswa.length; i++) {
     let mana = mahasiswa[i].Nama;
     let laini = mahasiswa[i].Nilai;
-    let Predikat = "";
+    
     if(mahasiswa[i].Figma){
         laini += 10;
     } else {
@@ -180,7 +181,6 @@ if(kursus === 'Figma'){
     listmhs += `<li>Nama: ${mana} Nilai: ${laini} Predikat: ${Predikat}</li>`;
 
 }
-
 document.getElementById('lefi').innerHTML = listmhs;
 document.getElementById('lefi1').innerHTML = Predikat;
 
@@ -202,19 +202,61 @@ const daftar = {
     ]
 };
 
-tableBody = document.querySelector('#table');
+tableBody = document.querySelector('#table tbody');
 let i = 0;
 while (i < daftar.data.length){
-    // tableBody.innerHTML += createTableRow(daftar.data[i]);
-    const row = document.createElement('tr')
-    const cell = document.createElement('td')
-    row = table.insertRow(i);
-    cell = table.insertCell(i);
-    tableBody.innerHTML += `
-    <tr>
-        <td>${daftar.data[i].id}</td>
-        <td>${daftar.data[i].nama}</td>
-        <td>${daftar.data[i].age}</td>
-    </tr>`;
+    row = tableBody.insertRow(i);
+    cellId = row.insertCell(0);
+    cellNama = row.insertCell(1);
+    cellUsia = row.insertCell(2);
+
+    cellId.innerHTML = daftar.data[i].id;
+    cellNama.innerHTML = daftar.data[i].nama;
+    cellUsia.innerHTML = daftar.data[i].age;
     i++;
 }
+
+let muda = 0;
+let sepuh = 0;
+
+for(let x = 0; x < daftar.data.length; x++){
+    let umur = 0;
+    umur = daftar.data[x].age ;
+    console.log(umur)
+    if (umur <= 20){
+        muda++;
+    } else if (umur >= 50) {
+        sepuh++;
+    }
+}
+
+document.getElementById('ts').innerHTML = "Total Jumlah Pasien : " + daftar.data.length;
+document.getElementById('ts1').innerHTML = "Total Jumlah Pasien dibawah 20 tahun : " + muda;
+document.getElementById('ts2').innerHTML = "Total Jumlah Pasien diatas 50 tahun : " + sepuh;
+// while (i < daftar.data.length){
+//     const row = document.createElement('tr')
+//     const cell = document.createElement('td')
+//     // row = table.insertRow(i);
+//     // cell = table.insertCell(i);
+//     // tableBody.innerHTML += `
+//     // <tr>
+//     //     <td>${daftar.data[i].id}</td>
+//     //     <td>${daftar.data[i].nama}</td>
+//     //     <td>${daftar.data[i].age}</td>
+//     // </tr>`;
+//     cell.textContent = daftar.data[i].id;
+//     row.appendChild(cell);
+
+//     const mana = document.createElement('td');
+//     mana.textContent = daftar.data[i].nama;
+//     row.appendChild(mana);
+
+//     const usia = document.createElement('td');
+//     usia.textContent = daftar.data[i].age;
+//     row.appendChild(usia);
+
+//     table.querySelector('tbody').appendChild(row);
+//     i++;
+// }
+
+
