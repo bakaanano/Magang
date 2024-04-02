@@ -233,30 +233,3 @@ for(let x = 0; x < daftar.data.length; x++){
 document.getElementById('ts').innerHTML = "Total Jumlah Pasien : " + daftar.data.length;
 document.getElementById('ts1').innerHTML = "Total Jumlah Pasien dibawah 20 tahun : " + muda;
 document.getElementById('ts2').innerHTML = "Total Jumlah Pasien diatas 50 tahun : " + sepuh;
-// while (i < daftar.data.length){
-//     const row = document.createElement('tr')
-//     const cell = document.createElement('td')
-//     // row = table.insertRow(i);
-//     // cell = table.insertCell(i);
-//     // tableBody.innerHTML += `
-//     // <tr>
-//     //     <td>${daftar.data[i].id}</td>
-//     //     <td>${daftar.data[i].nama}</td>
-//     //     <td>${daftar.data[i].age}</td>
-//     // </tr>`;
-//     cell.textContent = daftar.data[i].id;
-//     row.appendChild(cell);
-
-//     const mana = document.createElement('td');
-//     mana.textContent = daftar.data[i].nama;
-//     row.appendChild(mana);
-
-//     const usia = document.createElement('td');
-//     usia.textContent = daftar.data[i].age;
-//     row.appendChild(usia);
-
-//     table.querySelector('tbody').appendChild(row);
-//     i++;
-// }
-
-
