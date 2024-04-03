@@ -240,18 +240,17 @@ const pasien = {
     message: 'View data collection',
     data: [
         {id: 1, nama: 'Vega', age: 25 , gaji: 11000000 },
-        {id: 2, nama: 'Yardan', age: 50 , gaji: 12000000},
-        {id: 3, nama: 'Taufiq', age: 64 , gaji: 13000000},
+        {id: 2, nama: 'Yardan', age: 50 , gaji: 120},
+        {id: 3, nama: 'Taufiq', age: 64 , gaji: 130},
         {id: 4, nama: 'Nathan', age: 14 , gaji: 10000000},
         {id: 5, nama: 'Andreas', age: 29 , gaji: 14000000},
-        {id: 6, nama: 'Rafi', age: 44 , gaji: 15000000},
-        {id: 7, nama: 'Ilham', age: 53 , gaji: 16000000},
+        {id: 6, nama: 'Rafi', age: 44 , gaji: 150},
+        {id: 7, nama: 'Ilham', age: 53 , gaji: 160},
         {id: 8, nama: 'Bram', age: 32 , gaji: 17000000},
-        {id: 9, nama: 'Fandi', age: 10 , gaji: 0},
-        {id: 10, nama: 'Riza', age: 78 , gaji: 18000000}
+        {id: 9, nama: 'Fandi', age: 10 , gaji: 1900000},
+        {id: 10, nama: 'Riza', age: 78 , gaji: 180}
     ]
 };
-console.log(pasien.data)
 
 tableBody = document.querySelector('#letab tbody');
 let p = 0;
@@ -271,6 +270,7 @@ while (p < pasien.data.length){
 
 let nom = 0;
 let tuwek = 0;
+// let papatluh =0;
 
 
 for(let x = 0; x < pasien.data.length; x++){
@@ -282,14 +282,25 @@ for(let x = 0; x < pasien.data.length; x++){
     }
 }
 
-ttlgj40 = 0;
-gjvip = 0;
+let ttlgj40 = 0;
+let gjvip = 0;
+let vip = 0;
+let urip = 0;
+let totalwage = 0;
 for(let k = 0; k <pasien.data.length; k++){
     let wage = 0;
-    wage = pasien.data[k].gaji;
-    if(umur >= 40){
-        ttlgj40++;
-    } else if (umur < 20 ){
-        gjvip++;
+    urip = pasien.data[k].age
+    wage = pasien.data[k].gaji
+    vip = pasien.data[3].gaji
+    if(urip >= 40){
+       ttlgj40 += wage;
+    } else if (urip < 20 ){
+        vip += wage;
     }
+    totalwage += pasien.data[k].gaji
 }
+
+
+document.getElementById('gj').innerHTML = "Total Seluruh Gaji Pasien : " + totalwage;
+document.getElementById('gj1').innerHTML = "Total Seluruh Gaji Di atas 40 tahun : " + ttlgj40;
+document.getElementById('gj2').innerHTML = "Total Gaji khusus 14 tahun : " + vip;
