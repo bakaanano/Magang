@@ -218,9 +218,9 @@ while (i < daftar.data.length){
 
 let muda = 0;
 let sepuh = 0;
+let umur = 0;
 
 for(let x = 0; x < daftar.data.length; x++){
-    let umur = 0;
     umur = daftar.data[x].age ;
     if (umur < 20){
         muda++;
@@ -232,3 +232,64 @@ for(let x = 0; x < daftar.data.length; x++){
 document.getElementById('ts').innerHTML = "Total Jumlah Pasien : " + daftar.data.length;
 document.getElementById('ts1').innerHTML = "Total Jumlah Pasien dibawah 20 tahun : " + muda;
 document.getElementById('ts2').innerHTML = "Total Jumlah Pasien diatas 50 tahun : " + sepuh;
+
+// Tugas 6 JavaScript
+
+const pasien = {
+    status: 200,
+    message: 'View data collection',
+    data: [
+        {id: 1, nama: 'Vega', age: 25 , gaji: 11000000 },
+        {id: 2, nama: 'Yardan', age: 50 , gaji: 12000000},
+        {id: 3, nama: 'Taufiq', age: 64 , gaji: 13000000},
+        {id: 4, nama: 'Nathan', age: 14 , gaji: 10000000},
+        {id: 5, nama: 'Andreas', age: 29 , gaji: 14000000},
+        {id: 6, nama: 'Rafi', age: 44 , gaji: 15000000},
+        {id: 7, nama: 'Ilham', age: 53 , gaji: 16000000},
+        {id: 8, nama: 'Bram', age: 32 , gaji: 17000000},
+        {id: 9, nama: 'Fandi', age: 10 , gaji: 0},
+        {id: 10, nama: 'Riza', age: 78 , gaji: 18000000}
+    ]
+};
+console.log(pasien.data)
+
+tableBody = document.querySelector('#letab tbody');
+let p = 0;
+while (p < pasien.data.length){
+    row = tableBody.insertRow(p);
+    celid = row.insertCell(0);
+    celna = row.insertCell(1);
+    celu = row.insertCell(2);
+    celes = row.insertCell(3);
+
+    celid.innerHTML = pasien.data[p].id;
+    celna.innerHTML = pasien.data[p].nama;
+    celu.innerHTML = pasien.data[p].age;
+    celes.innerHTML = pasien.data[p].gaji;
+    p++;
+}
+
+let nom = 0;
+let tuwek = 0;
+
+
+for(let x = 0; x < pasien.data.length; x++){
+    umur = pasien.data[x].age ;
+    if (umur < 20){
+        nom++;
+    } else if (umur > 50) {
+        tuwek++;
+    }
+}
+
+ttlgj40 = 0;
+gjvip = 0;
+for(let k = 0; k <pasien.data.length; k++){
+    let wage = 0;
+    wage = pasien.data[k].gaji;
+    if(umur >= 40){
+        ttlgj40++;
+    } else if (umur < 20 ){
+        gjvip++;
+    }
+}
