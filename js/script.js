@@ -222,10 +222,9 @@ let sepuh = 0;
 for(let x = 0; x < daftar.data.length; x++){
     let umur = 0;
     umur = daftar.data[x].age ;
-    console.log(umur)
-    if (umur <= 20){
+    if (umur < 20){
         muda++;
-    } else if (umur >= 50) {
+    } else if (umur > 50) {
         sepuh++;
     }
 }
