@@ -27,9 +27,13 @@ let hargaawal = harga1 + harga2 + harga3 + harga4 + harga5;
 let disc = 0.1 * hargaawal ;
 let hargaakhir = hargaawal - disc;
 let Menu = "";
-for (let i = 0; i < makanan_menu.length; i++) {
+
+function pra2 (makanan_menu){
+    for (let i = 0; i < makanan_menu.length; i++) {
     Menu +=`<li>${makanan_menu[i]}</li><br>`;
+    }
 }
+pra2(makanan_menu);
 document.getElementById('tes').innerHTML = Menu;
 document.getElementById('tes1').innerHTML = "B. Total Pembayaran = " + hargaawal;
 document.getElementById('tes2').innerHTML = "C. Diskon 10% menjadi =" + hargaakhir;
