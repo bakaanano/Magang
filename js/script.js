@@ -194,7 +194,7 @@ for (let i = 0; i < mahasiswa.length; i++) {
 }
 tgs4(mahasiswa);
 document.getElementById('lefi').innerHTML = listmhs;
-document.getElementById('lefi1').innerHTML = Predikat;
+// document.getElementById('lefi1').innerHTML = Predikat;
 
 // Tugas 5 JavaScript
 const daftar = {
