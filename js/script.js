@@ -7,7 +7,15 @@ const makanan3 = 15000;
 let total = makanan1 + makanan2 + makanan3;
 let diskon = 0.1 * total ;
 let totalpembayaran = total - diskon;
-//document.getElementById('demo').innerHTML = "A. " + menu_makanan;
+mema = "";
+
+function pra1(menu_makanan) { 
+    for (let i = 0; i < menu_makanan.length; i++) {
+    mema += `<li>${menu_makanan[i]}</li> <br>`;
+    }
+}
+pra1(menu_makanan)
+document.getElementById('demo').innerHTML = mema;
 document.getElementById('demo1').innerHTML = "B. Total Pembayaran = " + total;
 document.getElementById('demo2').innerHTML = "C. Diskon 10% menjadi =" + totalpembayaran;   
 
@@ -51,10 +59,13 @@ let priceA = lm[0].harga + lm[1].harga + lm[2].harga + lm[3].harga;
 let kondis = 0.1 * priceA;
 let priceB = priceA - kondis;
 let list = "";
-for (let i = 0; i < lm.length; i++) {
-    // list +=`<li>${(/*"Menu :" +*/ lm[i]['Menu'] /*+ " : " + lm[i]['harga']*/)}</li><br>`
-    list += `<li>${lm[i].Menu} : Rp. ${lm[i].harga} </li>`
+function tgs2 (lm){
+    for (let i = 0; i < lm.length; i++) {
+        // list +=`<li>${(/*"Menu :" +*/ lm[i]['Menu'] /*+ " : " + lm[i]['harga']*/)}</li><br>`
+        list += `<li>${lm[i].Menu} : Rp. ${lm[i].harga} </li>`
+    }
 }
+tgs2(lm);
 document.getElementById('ob').innerHTML = list;
 document.getElementById('ob1').innerHTML = "B. Total Pembayaran =  Rp." + priceA;
 document.getElementById('ob2').innerHTML = "C. Diskon 10% menjadi = Rp." + priceB;
@@ -76,46 +87,52 @@ const level = [1 , 2 , 3 , 4 , 5 , 6 , 7 , 8 , 9 , 10]
 let userm = "";
 let ao = "";
 
-for (let i = 0; i < jsm.length; i++) {
-    userm += `<li>${jsm[i].unem} : Rp. ${jsm[i].garha} <br> variant: ${jsm[i].variant.join(" , ")}</li>`
-}
+function tgs3(jsm , pesan) { 
 
-for (let x = 0; x < pesan.length; x++){
-    for(let y = 0; y < jsm.length; y++){
-        if(pesan[x] === jsm[y].unem) {
-            if(pesan[x] === "Nasi Pecel"){
-                totalPayment += 5000;
-                
-            } else {
-                totalPayment += jsm[y].garha;
+    for (let i = 0; i < jsm.length; i++) {
+        userm += `<li>${jsm[i].unem} : Rp. ${jsm[i].garha} <br> variant: ${jsm[i].variant.join(" , ")}</li>`
+    }
+
+    for (let x = 0; x < pesan.length; x++){
+        for(let y = 0; y < jsm.length; y++){
+            if(pesan[x] === jsm[y].unem) {
+                if(pesan[x] === "Nasi Pecel"){
+                    totalPayment += 5000;
+                    
+                } else {
+                    totalPayment += jsm[y].garha;
+                }
             }
         }
     }
-}
-for (let z = 0; z <pesan.length; z++){
-    for(let p = 0; p < jsm.length; p++){
-        if(pesan[z] === jsm[p].unem) {
-            if(pesan[z] === "Nasi Pecel"){
-                jsm[p].variant = "Pedas Banget";
-                lvl = level[4]
-                ao += `<li>${pesan[z]} : Rp. 5000 Variant ${jsm[p].variant} Level: ${lvl}</li>`;
+    for (let z = 0; z <pesan.length; z++){
+        for(let p = 0; p < jsm.length; p++){
+            if(pesan[z] === jsm[p].unem) {
+                if(pesan[z] === "Nasi Pecel"){
+                    jsm[p].variant = "Pedas Banget";
+                    lvl = level[4]
+                    ao += `<li>${pesan[z]} : Rp. 5000 Variant ${jsm[p].variant} Level: ${lvl}</li>`;
 
-            } else if(pesan[z] === "Nasi Rendang") {
-                jsm[p].variant = "Pedas";
-                lvl = level[1]
-                ao += `<li>${pesan[z]} : Rp. ${jsm[p].garha} Variant ${jsm[p].variant} Level: ${lvl}</li>`;
+                } else if(pesan[z] === "Nasi Rendang") {
+                    jsm[p].variant = "Pedas";
+                    lvl = level[1]
+                    ao += `<li>${pesan[z]} : Rp. ${jsm[p].garha} Variant ${jsm[p].variant} Level: ${lvl}</li>`;
+                    
+                } else if (pesan[z] === "Nasi Jagung") {
+                    jsm[p].variant = "Original"
+                    ao += `<li>${pesan[z]} : Rp. ${jsm[p].garha} Variant ${jsm[p].variant} </li>`;
+                    
+                } else {
+                    ao += `<li>${pesan[z]} : Rp. ${jsm[p].garha}</li>`;
+                }
                 
-            } else if (pesan[z] === "Nasi Jagung") {
-                jsm[p].variant = "Original"
-                ao += `<li>${pesan[z]} : Rp. ${jsm[p].garha} Variant ${jsm[p].variant} </li>`;
-                
-            } else {
-                ao += `<li>${pesan[z]} : Rp. ${jsm[p].garha}</li>`;
             }
-            
         }
     }
+
+    
 }
+tgs3(jsm,pesan,isMember)
 
 let potongan = totalPayment * 0.1;
 let pajak = totalPayment * 0.11;
@@ -126,7 +143,6 @@ if (isMember){
 } else {
     akhir = totalPayment;
 }
-
 document.getElementById('ifel').innerHTML = userm;
 document.getElementById('ifel1').innerHTML = ao;
 document.getElementById('ifel2').innerHTML = isMember;
@@ -146,8 +162,8 @@ let mahasiswa = [
 
 listmhs = "";
 let Predikat = "";
-// let kursus = '';
 
+function tgs4(mahasiswa) {
 for (let i = 0; i < mahasiswa.length; i++) {
     let mana = mahasiswa[i].Nama;
     let laini = mahasiswa[i].Nilai;
@@ -158,16 +174,6 @@ for (let i = 0; i < mahasiswa.length; i++) {
         laini += 0;
     }
     
-/*if( mana === 'Andreas'){
-    kursus = 'Figma';
-} else {
-    kursus =  "";
-}
-
-if(kursus === 'Figma'){
-    laini += 10;
-}
-*/
     if(laini >= 100){
         Predikat = 'A +';
     }else if(laini >= 80 && laini < 100){
@@ -185,6 +191,8 @@ if(kursus === 'Figma'){
     listmhs += `<li>Nama: ${mana} Nilai: ${laini} Predikat: ${Predikat}</li>`;
 
 }
+}
+tgs4(mahasiswa);
 document.getElementById('lefi').innerHTML = listmhs;
 document.getElementById('lefi1').innerHTML = Predikat;
 
@@ -208,6 +216,11 @@ const daftar = {
 
 tableBody = document.querySelector('#table tbody');
 let i = 0;
+let muda = 0;
+let sepuh = 0;
+let umur = 0;
+
+function tgs5 (daftar) {
 while (i < daftar.data.length){
     row = tableBody.insertRow(i);
     cellId = row.insertCell(0);
@@ -220,10 +233,6 @@ while (i < daftar.data.length){
     i++;
 }
 
-let muda = 0;
-let sepuh = 0;
-let umur = 0;
-
 for(let x = 0; x < daftar.data.length; x++){
     umur = daftar.data[x].age ;
     if (umur < 20){
@@ -232,7 +241,8 @@ for(let x = 0; x < daftar.data.length; x++){
         sepuh++;
     }
 }
-
+}
+tgs5(daftar);
 document.getElementById('ts').innerHTML = "Total Jumlah Pasien : " + daftar.data.length;
 document.getElementById('ts1').innerHTML = "Total Jumlah Pasien dibawah 20 tahun : " + muda;
 document.getElementById('ts2').innerHTML = "Total Jumlah Pasien diatas 50 tahun : " + sepuh;
@@ -258,6 +268,16 @@ const pasien = {
 
 tableBody = document.querySelector('#letab tbody');
 let p = 0;
+let nom = 0;
+let tuwek = 0;
+let ttlgj40 = 0;
+let gjvip = 0;
+let vip = 0;
+let urip = 0;
+let totalwage = 0;
+let wage = 0;
+
+function tgs6(pasien){
 while (p < pasien.data.length){
     row = tableBody.insertRow(p);
     celid = row.insertCell(0);
@@ -272,11 +292,6 @@ while (p < pasien.data.length){
     p++;
 }
 
-let nom = 0;
-let tuwek = 0;
-// let papatluh =0;
-
-
 for(let x = 0; x < pasien.data.length; x++){
     umur = pasien.data[x].age ;
     if (umur < 20){
@@ -286,12 +301,7 @@ for(let x = 0; x < pasien.data.length; x++){
     }
 }
 
-let ttlgj40 = 0;
-let gjvip = 0;
-let vip = 0;
-let urip = 0;
-let totalwage = 0;
-let wage = 0;
+
 for(let k = 0; k <pasien.data.length; k++){
     urip = pasien.data[k].age
     wage = pasien.data[k].gaji
@@ -303,8 +313,8 @@ for(let k = 0; k <pasien.data.length; k++){
     }
     totalwage += pasien.data[k].gaji
 }
-
-
+}
+tgs6(pasien);
 document.getElementById('gj').innerHTML = "Total Seluruh Gaji Pasien : " + totalwage;
 document.getElementById('gj1').innerHTML = "Total Seluruh Gaji Di atas 40 tahun : " + ttlgj40;
 document.getElementById('gj2').innerHTML = "Total Gaji khusus 14 tahun : " + vip;
