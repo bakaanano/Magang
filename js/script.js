@@ -1,23 +1,45 @@
-let menu_makanan = ["Nasi Pecel" , 
+const menu_makanan = ["Nasi Pecel" , 
                     "KFC" , 
                     "Nasi Rawon" ,];
-const makanan1 = 10000;
-const makanan2 = 25000;
-const makanan3 = 15000;
-let total = makanan1 + makanan2 + makanan3;
-let diskon = 0.1 * total ;
-let totalpembayaran = total - diskon;
-mema = "";
+// const makanan1 = 10000;
+// const makanan2 = 25000;
+// const makanan3 = 15000;
+const ph = [10000, 25000 , 15000];
+// let diskon = 0.1 * total ;
+// let totalpembayaran = total - diskon;
+
 
 function pra1(menu_makanan) { 
+    mema = "";
     for (let i = 0; i < menu_makanan.length; i++) {
-    mema += `<li>${menu_makanan[i]}</li> <br>`;
+        mema += `<li>${menu_makanan[i]}</li> <br>`;
     }
+    return mema;
 }
-pra1(menu_makanan)
-document.getElementById('demo').innerHTML = mema;
-document.getElementById('demo1').innerHTML = "B. Total Pembayaran = " + total;
-document.getElementById('demo2').innerHTML = "C. Diskon 10% menjadi =" + totalpembayaran;   
+let aa = pra1(menu_makanan)
+
+function dsk (diskon9 , total){
+    // let diskon9 = 0.1;
+    let diso = diskon9 * total
+    let ksd = total - diso;
+    return diso;
+}
+
+
+function ttl(ph){
+    let total = 0;
+    for (let i = 0; i < ph.length; i++){
+        total += ph[i]; 
+    }
+    
+    return total;
+}
+let atl = ttl(ph);
+let diskon10 = dsk(0.1 , atl);
+
+document.getElementById('demo').innerHTML = aa;
+document.getElementById('demo1').innerHTML = "B. Total Pembayaran = " + atl ;
+document.getElementById('demo2').innerHTML = "C. Diskon 10% menjadi = " + (atl - diskon10);   
 
 
 let makanan_menu = [" Es Kopi Susu : Rp. 10000", 
@@ -132,20 +154,23 @@ function tgs3(jsm , pesan) {
 
     
 }
-tgs3(jsm,pesan,isMember)
+tgs3(jsm,pesan)
 
 let potongan = totalPayment * 0.1;
 let pajak = totalPayment * 0.11;
 let akhir = totalPayment;
 
-if (isMember){
-    akhir = totalPayment - potongan + pajak;
-} else {
-    akhir = totalPayment;
+function isem(isMember){
+    if (isMember){
+        akhir = totalPayment - potongan + pajak;
+    } else {
+        akhir = totalPayment;
+    }
 }
+isem(isMember)
 document.getElementById('ifel').innerHTML = userm;
 document.getElementById('ifel1').innerHTML = ao;
-document.getElementById('ifel2').innerHTML = isMember;
+// document.getElementById('ifel2').innerHTML = isMember;
 document.getElementById('ifel3').innerHTML = " Total Keseluruhan : Rp. " + akhir;
 
 
@@ -318,3 +343,4 @@ tgs6(pasien);
 document.getElementById('gj').innerHTML = "Total Seluruh Gaji Pasien : " + totalwage;
 document.getElementById('gj1').innerHTML = "Total Seluruh Gaji Di atas 40 tahun : " + ttlgj40;
 document.getElementById('gj2').innerHTML = "Total Gaji khusus 14 tahun : " + vip;
+
