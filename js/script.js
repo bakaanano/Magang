@@ -348,16 +348,25 @@ document.getElementById('gj2').innerHTML = "Total Gaji khusus 14 tahun : " + vip
 let tampilan = document.getElementById('display');
 let angka = '';
 
-  function appendToDisplay(value) {
-    tampilan.value += value;
-  }
+function render(angka){
+    if (angka !== ''){
+    tampilan.value += angka;
+    } else {
+        tampilan.value = '';
+    }
+}
 
-  function clearDisplay() {
-    tampilan.value = '';
-  }
+function appendToDisplay(value) {
+render(value);
+}
 
-  function calculate() {
-    const sementara = tampilan.value;
-    const hasil = eval(sementara);
-    tampilan.value = hasil;
-  }
+function clearDisplay() {
+render('');
+}
+
+function calculate() {
+const sementara = tampilan.value;
+const hasil = eval(sementara);
+clearDisplay();
+render(hasil);
+}
