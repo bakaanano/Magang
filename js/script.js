@@ -344,19 +344,20 @@ document.getElementById('gj').innerHTML = "Total Seluruh Gaji Pasien : " + total
 document.getElementById('gj1').innerHTML = "Total Seluruh Gaji Di atas 40 tahun : " + ttlgj40;
 document.getElementById('gj2').innerHTML = "Total Gaji khusus 14 tahun : " + vip;
 
-let display = document.getElementById('display');
+// Kalkulator
+let tampilan = document.getElementById('display');
 let angka = '';
 
   function appendToDisplay(value) {
-    display.value += value;
+    tampilan.value += value;
   }
 
   function clearDisplay() {
-    display.value = '';
+    tampilan.value = '';
   }
 
   function calculate() {
-    const expression = display.value;
-    const result = eval(expression);
-    display.value = result;
+    const sementara = tampilan.value;
+    const hasil = eval(sementara);
+    tampilan.value = hasil;
   }
