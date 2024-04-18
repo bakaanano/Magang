@@ -370,3 +370,21 @@ const hasil = eval(sementara);
 clearDisplay();
 render(hasil);
 }
+
+// Tugas Search (8) JavaScript 
+const listDataTerbaru = {
+    status: 200,
+    message: 'view data collection',
+    data: [
+      {id: 1,name: 'Vega',age: 25},
+      {id: 2,name: 'Yardan',age: 50},
+      {id: 3,name: 'Taufiq',age: 64},
+      {id: 4,name: 'Nathan',age: 14},
+      {id: 5,name: 'Andreas',age: 29},
+      {id: 6,name: 'Rafi',age: 44},
+      {id: 7,name: 'Ilham',age: 53},
+      {id: 8,name: 'Bram',age: 32},
+      {id: 9,name: 'Fandi',age: 10},
+      {id: 10,name: 'Riza',age: 78},
+    ]
+  }
