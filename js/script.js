@@ -392,16 +392,33 @@ const listNamaTerbaru = {
 function pencarian() {
     const inputSearch = document.querySelector('#inputSearch').value;
     const resultSearch = document.querySelector('#hasilPencarian');
-
-    const result = listNamaTerbaru.data.find(person => person.name.toLowerCase() === inputSearch.toLowerCase());
-    if (result) {
-        resultSearch.innerHTML = `<p>ID: ${result.id}</p><p>Name: ${result.name}</p><p>Age: ${result.age}</p>`;
-        if (result.age > 70) {
-        resultSearch.innerHTML += '<p>Manula</p>';
-        } else if (result.age <= 70 && result.age > 50) {
-        resultSearch.innerHTML += '<p>Masih joss</p>';
-        } 
+    const lowerCaseInput = inputSearch.toLowerCase();
+    // const result = listNamaTerbaru.data.find(person => person.name.toUpperCase() === inputSearch.toUpperCase());
+    // const result = listNamaTerbaru.data.find(person => person.name.toLowerCase() === lowerCaseInput);
+    const searchData = listNamaTerbaru.data.filter(person => person.name.toLowerCase().includes(lowerCaseInput));
+    if (searchData.length > 0) {
+        resultSearch.innerHTML = '';
+        searchData.forEach(person => {
+            resultSearch.innerHTML += `<p>ID: ${person.id}</p><p>Name: ${person.name}</p><p>Age: ${person.age}</p>`;
+            if (person.age > 70) {
+                resultSearch.innerHTML += '<p>Manula</p>';
+            } else if (person.age <= 70 && person.age > 50) {
+                resultSearch.innerHTML += '<p>Masih joss</p>';
+            } 
+        });
     } else {
         resultSearch.innerHTML = '<p>Data tidak ditemukan</p>';
     }
 }
+
+
+    // if (result) {
+    //     resultSearch.innerHTML = `<p>ID: ${result.id}</p><p>Name: ${result.name}</p><p>Age: ${result.age}</p>`;
+    //     if (result.age > 70) {
+    //     resultSearch.innerHTML += '<p>Manula</p>';
+    //     } else if (result.age <= 70 && result.age > 50) {
+    //     resultSearch.innerHTML += '<p>Masih joss</p>';
+    //     } 
+    // } else {
+    //     resultSearch.innerHTML = '<p>Data tidak ditemukan</p>';
+    // }
