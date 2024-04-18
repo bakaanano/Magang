@@ -389,7 +389,7 @@ const listNamaTerbaru = {
     ]
   }
   
-function searchData() {
+function pencarian() {
     const inputSearch = document.querySelector('#inputSearch').value;
     const resultSearch = document.querySelector('#hasilPencarian');
 
