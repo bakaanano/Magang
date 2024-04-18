@@ -372,7 +372,7 @@ render(hasil);
 }
 
 // Tugas Search (8) JavaScript 
-const listDataTerbaru = {
+const listNamaTerbaru = {
     status: 200,
     message: 'view data collection',
     data: [
@@ -388,3 +388,20 @@ const listDataTerbaru = {
       {id: 10,name: 'Riza',age: 78},
     ]
   }
+  
+function searchData() {
+    const inputSearch = document.querySelector('#inputSearch').value;
+    const resultSearch = document.querySelector('#hasilPencarian');
+
+    const result = listNamaTerbaru.data.find(person => person.name.toLowerCase() === inputSearch.toLowerCase());
+    if (result) {
+        resultSearch.innerHTML = `<p>ID: ${result.id}</p><p>Name: ${result.name}</p><p>Age: ${result.age}</p>`;
+        if (result.age > 70) {
+        resultSearch.innerHTML += '<p>Manula</p>';
+        } else if (result.age <= 70 && result.age > 50) {
+        resultSearch.innerHTML += '<p>Masih joss</p>';
+        } 
+    } else {
+        resultSearch.innerHTML = '<p>Data tidak ditemukan</p>';
+    }
+}

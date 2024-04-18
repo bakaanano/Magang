@@ -383,28 +383,18 @@
                   </svg>
                 </button>
               </div>
-
               <div class="post__content">
                 <div class="post__medias">
                   <div id="card-task">
                     <table id="listNamaSearch">
-                      <thead>
-                        <tr>
-                          <th>ID</th>
-                          <th>Name</th>
-                          <th>Age</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                          <td colspan="4">
+                      <tr>
+                        <td colspan="4">
                             <label for="display">Cari nama</label>
-                            <input type="text" id="searchInput">
-                            <button onclick="searchData();">Cari</button>
-                            <div id="result" style="text-align: left;"></div>
-                          </td>
-                        </tr>
-                    </tbody>
+                            <input type="text" id="inputSearch">
+                            <button onclick="searchData();">Search</button>
+                            <div id="hasilPencarian" style="text-align: left;"></div>
+                        </td>
+                      </tr>
                     </table> <br>
                     <p id="sc"></p> <br>
                     <p id="sc1"></p> <br>
